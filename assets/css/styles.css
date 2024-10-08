@@ -842,3 +842,73 @@ h1 {
         margin: 15px 0;
     }
 }
+
+/*scroll-button*/
+
+  .content {
+    padding: 20px;
+  }
+  
+  .spacer {
+    height: 1500px;
+  }
+  
+  /* Scroll button styling */
+  #scrollBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, #16213e, #1a1a2e);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 20%;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  #scrollBtn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Add animation to the button when it appears */
+  #scrollBtn.show {
+    display: block;
+  }
+  
+  /* Responsive styles */
+  
+  /* Tablets and smaller devices */
+  @media (max-width: 768px) {
+    #scrollBtn {
+      bottom: 15px;
+      right: 15px;
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
+  /* Smartphones */
+  @media (max-width: 480px) {
+    #scrollBtn {
+      bottom: 10px;
+      right: 10px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 20%; /* Rounded on small screens */
+    }
+  
+    #scrollBtn:hover {
+      transform: scale(1.05); /* Smaller hover scale on smaller devices */
+    }
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
