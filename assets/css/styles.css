@@ -5,6 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -13,14 +16,81 @@ body {
     margin: 0;
     padding: 0;
 }
+/* navbar */
 .navbar {
-    position: relative;
-    background-color: #174164; /* Dark semi-transparent background for contrast */
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+.logo img{
+    width:150px;
+    height:auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    padding:10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 8px;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #00ccff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
 .hamburger {
-    display: none; /* Hide by default */
+    display: none;
     cursor: pointer;
 }
 
@@ -28,27 +98,52 @@ body {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: 5px auto;
-    transition: all 0.3s;
+    transition: all 0.3s ease; 
 }
 
-.nav-links {
-    list-style: none;
-    display: flex; /* Horizontal layout */
-    justify-content: flex-end; /* Align to the right */
+.hamburger .bar.cross:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
 }
 
-.nav-links li {
-    margin-left: 20px;
+.hamburger .bar.cross:nth-child(2) {
+    opacity: 0;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
+.hamburger .bar.cross:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px); 
 }
 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
+        right: 0; 
+        background-color: rgba(0, 123, 255,.8);
+        width: 100%;
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+        opacity: 0; 
+        transform: translateY(20px);
+        pointer-events: none; 
+    }
+    .nav-links a {
+        color: #1a1a2e;
+    }
+    .nav-links.active {
+        display: flex;
+        margin-top: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(1px); 
+        transform: translateY(0); 
+        pointer-events: auto;
+    }
+    .hamburger {
+        display: block;
+    }
+}
 .area {
     position: relative;
    
@@ -186,6 +281,14 @@ body {
     }
 }
 
+img{
+    width:80%;
+}
+.context img {
+    width: 70%; 
+    max-width: 700px; 
+    height: auto; 
+}
 .description {
     padding: 20px;
     background-color: white;
@@ -200,47 +303,6 @@ body {
 .description p {
     font-size: 1.2em;
     line-height: 1.5;
-}
-
-footer {
-    padding: 10px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background for contrast */
-    color: white;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide nav links on small screens */
-        flex-direction: column; /* Stack vertically */
-        position: absolute; /* Position it absolutely */
-        top: 60px; /* Below the navbar */
-        right: 0; /* Align right */
-        background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
-        width: 100%; /* Full width */
-    }
-
-    .nav-links.active {
-        display: flex; /* Show links when active */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger menu */
-    }
-}
-img{
-    width:80%;
-}
-.context img {
-    width: 70%; 
-    max-width: 700px; 
-    height: auto; 
 }
 
 /* FAQ Section CSS */
