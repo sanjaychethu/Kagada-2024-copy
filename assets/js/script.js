@@ -28,64 +28,68 @@ const bars = document.querySelectorAll('.hamburger .bar'); // Select the bars
 const navLinkItems = document.querySelectorAll('.nav-links li a'); // Select all nav links
 
 function closeMenu() {
-    navLinks.style.opacity = '0'; // Start fading out
-    navLinks.style.transform = 'translateY(-10px)'; // Slide up
+    // Apply fade-out and slide-up animation
+    navLinks.style.opacity = '0';
+    navLinks.style.transform = 'translateY(-10px)';
+    
+    // Delay removal of the active class for smooth transition
     setTimeout(() => {
-        navLinks.classList.remove('active'); // Remove active class
-        navLinks.style.pointerEvents = 'none'; // Disable pointer events
+        navLinks.classList.remove('active');
+        navLinks.style.pointerEvents = 'none';
+        
+        // Remove cross class to revert to hamburger icon
         bars.forEach(bar => {
-            bar.classList.remove('cross'); // Remove cross class to revert to hamburger
+            bar.classList.remove('cross');
         });
     }, 300);
 }
 
 hamburger.addEventListener('click', () => {
-    if (window.innerWidth <= 768) { // Check if in mobile view
+    // Only toggle menu in mobile view (screen width <= 768px)
+    if (window.innerWidth <= 768) {
         if (navLinks.classList.contains('active')) {
             closeMenu();
         } else {
-            navLinks.style.pointerEvents = 'auto'; // Enable pointer events
-            navLinks.classList.add('active'); // Add active class
+            navLinks.style.pointerEvents = 'auto'; // Enable clicking on the links
+            navLinks.classList.add('active');
+            
             setTimeout(() => {
-                navLinks.style.opacity = '1'; // Fade in
-                navLinks.style.transform = 'translateY(0)'; // Slide down
+                navLinks.style.opacity = '1';
+                navLinks.style.transform = 'translateY(0)';
             }, 0);
+            
             bars.forEach(bar => {
-                bar.classList.add('cross'); // Add cross class to transform hamburger
+                bar.classList.add('cross');
             });
         }
     }
 });
 
-// Close the menu when a nav link is clicked (only in mobile view)
+// Close the menu when a nav link is clicked (only for mobile view)
 navLinkItems.forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) { // Only apply this behavior in mobile view
+        if (window.innerWidth <= 768) {
             closeMenu();
         }
     });
 });
 
-
-// Get the button
+// Scroll-to-top button functionality
 let myButton = document.getElementById("scrollBtn");
 
-// When the user scrolls down 100px from the top of the document, show the button
 window.onscroll = function() {
-  scrollFunction();
+    scrollFunction();
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    myButton.classList.add("show");
-  } else {
-    myButton.classList.remove("show");
-  }
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        myButton.classList.add("show");
+    } else {
+        myButton.classList.remove("show");
+    }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 }
-
