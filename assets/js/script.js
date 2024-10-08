@@ -25,18 +25,23 @@ accordions.forEach(accordion => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const bars = document.querySelectorAll('.hamburger .bar');
+const navLinkItems = document.querySelectorAll('.nav-links li a'); // Select all nav links
+
+function closeMenu() {
+    navLinks.style.opacity = '0';
+    navLinks.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+        navLinks.classList.remove('active');
+        navLinks.style.pointerEvents = 'none';
+        bars.forEach(bar => {
+            bar.classList.remove('cross');
+        });
+    }, 300);
+}
 
 hamburger.addEventListener('click', () => {
     if (navLinks.classList.contains('active')) {
-        navLinks.style.opacity = '0';
-        navLinks.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            navLinks.classList.remove('active');
-            navLinks.style.pointerEvents = 'none';
-            bars.forEach(bar => {
-                bar.classList.remove('cross');
-            });
-        }, 300);
+        closeMenu();
     } else {
         navLinks.style.pointerEvents = 'auto';
         navLinks.classList.add('active');
@@ -48,4 +53,11 @@ hamburger.addEventListener('click', () => {
             bar.classList.add('cross');
         });
     }
+});
+
+// Add click event to each nav link to close the menu
+navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+        closeMenu();
+    });
 });
