@@ -114,7 +114,13 @@ body {
 .hamburger .bar.cross:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px); 
 }
-
+#eventlogo{
+    display: none;
+   }
+   #clublogo
+   {
+       display: none;
+   }
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -143,6 +149,32 @@ body {
     .hamburger {
         display: block;
     }
+    .context{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+    }
+    #hero
+    {
+        display: none;
+    }
+    #clublogo
+    {
+        display: block;
+        height: 150px;
+        width:auto;
+    }
+    #eventlogo
+    { display: block;
+        width:80%;
+    }
+    #about img {
+ height: 150px;
+ width:auto;
+    }
+
 }
 .area {
     position: relative;
@@ -153,6 +185,7 @@ body {
 }
 
 .context {
+  
     width: 100%;
     position: absolute;
     top: 50%;
