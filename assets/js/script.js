@@ -24,49 +24,44 @@ accordions.forEach(accordion => {
 //nav
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-const bars = document.querySelectorAll('.hamburger .bar');
-const navLinkItems = document.querySelectorAll('.nav-links li a'); 
+const bars = document.querySelectorAll('.hamburger .bar'); // Select the bars
+const navLinkItems = document.querySelectorAll('.nav-links li a'); // Select all nav links
 
 function closeMenu() {
-    navLinks.style.opacity = '0';
-    navLinks.style.transform = 'translateY(-10px)'; 
+    navLinks.style.opacity = '0'; // Start fading out
+    navLinks.style.transform = 'translateY(-10px)'; // Slide up
     setTimeout(() => {
-        navLinks.classList.remove('active'); 
-        navLinks.style.pointerEvents = 'none'; 
+        navLinks.classList.remove('active'); // Remove active class
+        navLinks.style.pointerEvents = 'none'; // Disable pointer events
         bars.forEach(bar => {
-            bar.classList.remove('cross');
+            bar.classList.remove('cross'); // Remove cross class to revert to hamburger
         });
     }, 300);
 }
 
 hamburger.addEventListener('click', () => {
-    if (window.innerWidth <= 768) { 
+    if (window.innerWidth <= 768) { // Check if in mobile view
         if (navLinks.classList.contains('active')) {
             closeMenu();
         } else {
-            navLinks.style.pointerEvents = 'auto'; 
-            navLinks.classList.add('active'); 
+            navLinks.style.pointerEvents = 'auto'; // Enable pointer events
+            navLinks.classList.add('active'); // Add active class
             setTimeout(() => {
-                navLinks.style.opacity = '1'; 
-                navLinks.style.transform = 'translateY(0)';
+                navLinks.style.opacity = '1'; // Fade in
+                navLinks.style.transform = 'translateY(0)'; // Slide down
             }, 0);
             bars.forEach(bar => {
-                bar.classList.add('cross'); 
+                bar.classList.add('cross'); // Add cross class to transform hamburger
             });
         }
     }
 });
 
+// Close the menu when a nav link is clicked (only in mobile view)
 navLinkItems.forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) { 
+        if (window.innerWidth <= 768) { // Only apply this behavior in mobile view
             closeMenu();
         }
-    });
-});
-
-navLinkItems.forEach(link => {
-    link.addEventListener('click', () => {
-        closeMenu();
     });
 });
