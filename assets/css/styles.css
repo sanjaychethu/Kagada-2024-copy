@@ -1064,5 +1064,81 @@ h1 {
 }
 
 
+/* contact-us css */
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.person {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for each contact */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    width: 30%; /* Default width for larger screens */
+    margin: 10px; /* Margin to space out contact cards */
+}
+
+.person:hover {
+    transform: translateY(-10px); /* Pop-out effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.person h3 {
+    color: #16213e; /* Color for the name */
+}
+
+.map {
+    text-align: center;
+    margin-top: 20px;
+}
+
+iframe {
+    border-radius: 10px; /* Rounded corners for the map */
+    border: 2px solid #007bff; /* Blue border around the map */
+    width: 100%; /* Responsive width */
+    height: 300px; /* Fixed height */
+    max-width: 600px; /* Limit max width */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .person {
+        width: 45%; /* Adjust width for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        flex-direction: column; /* Stack contact cards vertically */
+        align-items: center; /* Center alignment */
+    }
+
+    .person {
+        width: 80%; /* Adjust width for mobile */
+    }
+
+    iframe {
+        height: 250px; /* Adjust height for mobile */
+    }
+}
+
+
+
+
 
 /* kagada from the previous years ends */
