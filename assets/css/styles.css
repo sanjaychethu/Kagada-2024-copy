@@ -934,27 +934,28 @@ h1 {
   /* Tablets and smaller devices */
   @media (max-width: 768px) {
     #scrollBtn {
-      bottom: 15px;
-      right: 15px;
-      padding: 12px;
-      font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+        padding: 18px; /* Increased padding */
+        font-size: 18px; /* Increased font size */
     }
-  }
-  
-  /* Smartphones */
-  @media (max-width: 480px) {
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
     #scrollBtn {
-      bottom: 10px;
-      right: 10px;
-      padding: 10px;
-      font-size: 14px;
-      border-radius: 20%; /* Rounded on small screens */
+        bottom: 10px;
+        right: 10px;
+        padding: 16px; /* Increased padding */
+        font-size: 16px; /* Increased font size */
+        border-radius: 20%; /* Rounded on small screens */
     }
-  
+
     #scrollBtn:hover {
-      transform: scale(1.05); /* Smaller hover scale on smaller devices */
+        transform: scale(1.1); /* Slightly larger hover scale */
     }
-  }
+}
+
   
   html {
     scroll-behavior: smooth;
