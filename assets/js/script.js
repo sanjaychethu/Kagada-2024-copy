@@ -93,3 +93,43 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 }
+
+
+// for the video modals
+
+function openModal(videoUrl) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const videoSource = document.getElementById("videoSource");
+
+    // Set the correct video source
+    videoSource.src = videoUrl; // Use the full path passed from the onclick event
+    modalVideo.load(); // Reload video with the new source
+    modalVideo.play(); // Start playing the video
+
+    // Show the modal
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+
+    // Pause the video when the modal is closed
+    modalVideo.pause();
+
+    // Hide the modal
+    modal.style.display = "none";
+}
+
+function closeModalOnOutsideClick(event) {
+    const modalContent = document.getElementById("modalContent");
+    
+    // Check if the click was outside the modal content (video and surrounding elements)
+    if (event.target === modalContent) {
+        return; // Do nothing if clicking inside the modal content
+    }
+    closeModal(); // Close the modal if clicking outside
+}
+
+// end of video modals

@@ -213,6 +213,48 @@
 
 </section>
 
+
+<!-- kagada from the previous years starts --><br><br><br>
+<center><h1>KAGADA - From the previous years!</h1></center>
+
+<div class="memory-lane">
+    
+    <div class="video-card" onclick="openModal('./assets/img/KAGADA%202022%20After%20Movie%20_%20IEEE%20UVCE.mp4')" id="video1">
+        <video muted poster="./assets/img/videothumbnail2022.jpg"> <!-- Poster image -->
+            <source src="./assets/img/KAGADA%202022%20After%20Movie%20_%20IEEE%20UVCE.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3>Kagada 2022</h3>
+        <p>Click to play</p>
+    </div>
+
+    <div class="video-card" onclick="openModal('./assets/img/videoplayback.mp4')" id="video2">
+        <video muted poster="./assets/img/videothumbnail2023.jpg"> <!-- Poster image -->
+            <source src="./assets/img/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3>Kagada 2023</h3>
+        <p>Click to play</p>
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div id="videoModal" class="modal" onclick="closeModalOnOutsideClick(event)">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalContent" class="modal-content">
+        <video id="modalVideo" controls>
+            <source id="videoSource" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+
+
+<!-- end of kagada from the previous years -->
     
    <!-- FAQ section starts here -->
 
