@@ -936,8 +936,8 @@ h1 {
     #scrollBtn {
         bottom: 15px;
         right: 15px;
-        padding: 18px; /* Increased padding */
-        font-size: 18px; /* Increased font size */
+        padding: 24px; /* Further increased padding */
+        font-size: 22px; /* Further increased font size */
     }
 }
 
@@ -946,13 +946,13 @@ h1 {
     #scrollBtn {
         bottom: 10px;
         right: 10px;
-        padding: 16px; /* Increased padding */
-        font-size: 16px; /* Increased font size */
+        padding: 20px; /* Further increased padding */
+        font-size: 19px; /* Further increased font size */
         border-radius: 20%; /* Rounded on small screens */
     }
 
     #scrollBtn:hover {
-        transform: scale(1.1); /* Slightly larger hover scale */
+        transform: scale(1.15); /* Larger hover scale */
     }
 }
 
