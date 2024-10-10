@@ -1138,13 +1138,12 @@ iframe {
 }
 
 
-
 .notification {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: -300px; /* Initially hidden off-screen */
     width: 260px;
-    background-color:#16213e;
+    background-color: #16213e;
     color: white;
     padding: 15px;
     border-radius: 1rem;
@@ -1235,8 +1234,6 @@ iframe {
       height: 3px;
     }
   }
-
-
 
 
 

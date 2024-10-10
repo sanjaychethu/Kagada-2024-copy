@@ -133,8 +133,6 @@ function closeModalOnOutsideClick(event) {
 }
 
 
-
-
 window.onload = function() {
     // Show the notification
     const notification = document.getElementById('notification');
