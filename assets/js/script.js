@@ -132,4 +132,23 @@ function closeModalOnOutsideClick(event) {
     closeModal(); // Close the modal if clicking outside
 }
 
+
+
+
+window.onload = function() {
+    // Show the notification
+    const notification = document.getElementById('notification');
+    const progressBar = document.getElementById('progress-bar');
+    notification.classList.add('show');
+    
+    // Start progress bar animation
+    progressBar.style.width = '100%';
+
+    // Hide the notification after the progress bar completes (5 seconds)
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 5000); // 5 seconds
+  };
+
+
 // end of video modals
